@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.Task_Script_Include06</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>Task_Script_Include06</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var Task_Script_Include06 = Class.create();
+Task_Script_Include06.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	isEmployee: function() {
+
+        //var userIsEmployee = this.getParameter('sys_param_name');
+        var userSysId = this.getParameter('sysparm_name_sysid');
+        var grName = new GlideRecord('sys_user');
+		gs.info('I wss here');
+        grName.addQuery('name', 'Joe Employee');
+		grName.addQuery('sys_id', userSysId);
+        grName.query();
+		var answer = 'false';
+        if (grName.next()) {
+			
+            answer = 'true';
+
+        }
+        return answer;
+    },
+    type: 'Task_Script_Include06'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-17 12:42:20</sys_created_on>
+        <sys_id>52d8bcdcc3096a10ee0c944ed40131ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Task_Script_Include06</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_52d8bcdcc3096a10ee0c944ed40131ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-17 12:42:20</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>52d8bcdcc3096a10ee0c944ed40131ae</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-17 12:42:20</sys_created_on>
+        <sys_id>f579f818c3096a10ee0c944ed40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-17 12:42:20</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
